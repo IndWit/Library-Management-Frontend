@@ -187,12 +187,3 @@ Special thanks to:
 
 ---
 
-# 🎉 README is ready, madam!
-
-If you want, I can also prepare:
-
-✅ README for **backend**
-✅ Setup instructions for both backend + frontend
-✅ Project summary page for your assignment report
-
-Just tell me!
