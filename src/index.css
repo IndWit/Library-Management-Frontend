@@ -1,0 +1,119 @@
+/* =========================================
+   1. GLOBAL VARIABLES & THEME
+   ========================================= */
+:root {
+  --bg-dark: #000000;
+  --bg-gradient: linear-gradient(135deg, #000000 0%, #081325 100%);
+  
+  /* Glassmorphism Colors */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.08);
+
+  /* Colors */
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  --primary: #4ca1a2;       
+  --primary-hover: #237c73;
+  --danger: #ef4444;        
+}
+
+/* =========================================
+   2. RESET & BASE ELEMENTS
+   ========================================= */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* =========================================
+   3. GLOBAL UTILITIES (Used everywhere)
+   ========================================= */
+.container {
+  width: 100%; max-width: 1200px; 
+  margin: 0 auto; padding: 0 20px;
+}
+
+.page-content {
+  flex: 1; padding: 40px 20px 60px;
+  max-width: 1200px; margin: 0 auto; width: 100%;
+}
+
+.center-screen {
+  min-height: 100vh; display: flex;
+  justify-content: center; align-items: center; padding: 20px;
+}
+
+.flex { display: flex; align-items: center; }
+.gap-2 { gap: 0.5rem; }
+
+/* =========================================
+   4. SHARED COMPONENTS (Buttons, Inputs, Cards)
+   ========================================= */
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 50px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Inputs & Textareas */
+input, textarea {
+  width: 100%; padding: 16px 20px; margin-bottom: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white; font-size: 1rem; outline: none;
+  transition: all 0.3s;
+}
+input:focus, textarea:focus {
+  border-color: var(--primary); 
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 3px rgba(76, 161, 162, 0.1);
+}
+input::placeholder, textarea::placeholder {
+  color: #64748b;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px; border-radius: 10px; border: none;
+  font-size: 1rem; font-weight: 600; cursor: pointer;
+  transition: all 0.2s; display: inline-flex;
+  align-items: center; justify-content: center;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+.btn-secondary { background: var(--glass-bg); border: 1px solid var(--glass-border); color: white; }
+.btn-secondary:hover { background: var(--glass-highlight); }
+
+.btn-full { width: 100%; }
+.btn-large { padding: 14px 32px; font-size: 1.05rem; }
+
+.icon-btn {
+  background: transparent; border: 1px solid transparent;
+  color: var(--text-muted); padding: 8px; border-radius: 8px;
+  cursor: pointer; transition: all 0.2s;
+}
+.icon-btn:hover { background: var(--glass-bg); color: white; }
+.icon-btn.danger:hover { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
